@@ -73,13 +73,13 @@ FILE_SECBOOT ( PERMITTED );
  *
  * This is a policy decision.
  */
-#define PEERBLK_RAW_OPEN_TIMEOUT ( 10 * TICKS_PER_SEC )
+#define PEERBLK_RAW_OPEN_TIMEOUT ( 30 * TICKS_PER_SEC )
 
 /** PeerDist raw block download attempt ongoing progress timeout
  *
  * This is a policy decision.
  */
-#define PEERBLK_RAW_RX_TIMEOUT ( 15 * TICKS_PER_SEC )
+#define PEERBLK_RAW_RX_TIMEOUT ( 45 * TICKS_PER_SEC )
 
 /** PeerDist retrieval protocol block download attempt initial progress timeout
  *
