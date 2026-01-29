@@ -79,7 +79,7 @@ struct autosized_block {
  *
  * Currently fixed at 4MB.
  */
-#define HEAP_SIZE ( 4096 * 1024 )
+#define HEAP_SIZE ( 4 * 4096 * 1024 )
 
 /** Heap area alignment */
 #define HEAP_ALIGN MIN_MEMBLOCK_ALIGN
