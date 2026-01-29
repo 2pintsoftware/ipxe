@@ -20,7 +20,7 @@ FILE_SECBOOT ( PERMITTED );
 #include <ipxe/pccrc.h>
 
 /** Maximum number of concurrent block downloads */
-#define PEERMUX_MAX_BLOCKS 32
+#define PEERMUX_MAX_BLOCKS 8
 
 /** PeerDist download content information cache */
 struct peerdist_info_cache {
