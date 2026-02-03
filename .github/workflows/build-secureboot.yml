@@ -1,0 +1,44 @@
+name: Build
+
+on: push
+
+env:
+  MAKEFLAGS: "-j4 GITVERSION=${{ github.sha }}"
+
+jobs:
+  uefi:
+    name: UEFI / ${{ matrix.arch }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        arch:
+          - arm32
+          - arm64
+          - i386
+          - loong64
+          - riscv32
+          - riscv64
+          - x86_64
+    container:
+      image: ghcr.io/ipxe/ipxe-builder-${{ matrix.arch }}
+    env:
+      bindir: bin-${{ matrix.arch }}-efi-sb
+    steps:
+
+      - name: Check out code
+        uses: actions/checkout@v6
+
+      - name: Build
+        working-directory: src
+        run: |
+          make ${{ env.bindir }}/snponly.efi
+
+      - name: Upload
+        uses: actions/upload-artifact@v6
+        with:
+          name: ${{ env.bindir }}
+          if-no-files-found: error
+          path: |
+            src/${{ env.bindir }}/snponly.efi
+
