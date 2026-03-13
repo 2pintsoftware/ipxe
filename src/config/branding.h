@@ -176,7 +176,7 @@ FILE_SECBOOT ( PERMITTED );
  * Vendors creating signed iPXE binaries must set this to the name
  * present in their EV code signing certificate.
  */
-#define PRODUCT_VENDOR ""
+#define PRODUCT_VENDOR "2Pint Software AB"
 
 /*
  * Product security name suffix
@@ -184,7 +184,7 @@ FILE_SECBOOT ( PERMITTED );
  * Vendors creating signed iPXE binaries must set this to a non-empty
  * value (e.g. "2pint").
  */
-#define PRODUCT_SBAT_NAME ""
+#define PRODUCT_SBAT_NAME "2pint"
 
 /*
  * Product security generation
@@ -194,7 +194,7 @@ FILE_SECBOOT ( PERMITTED );
  * is fixed (unless the upstream IPXE_SBAT_GENERATION has already been
  * incremented as part of that fix).
  */
-#define PRODUCT_SBAT_GENERATION 0
+#define PRODUCT_SBAT_GENERATION 1
 
 #include <config/local/branding.h>
 
