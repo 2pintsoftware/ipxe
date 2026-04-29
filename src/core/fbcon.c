@@ -35,6 +35,7 @@ FILE_SECBOOT ( PERMITTED );
 #include <assert.h>
 #include <byteswap.h>
 #include <ipxe/ansiesc.h>
+#include <ipxe/keys.h>
 #include <ipxe/image.h>
 #include <ipxe/pixbuf.h>
 #include <ipxe/uaccess.h>
@@ -490,6 +491,9 @@ void fbcon_putchar ( struct fbcon *fbcon, int character ) {
 			fbcon->xpos = ( fbcon->character.width - 1 );
 			fbcon->ypos--;
 		}
+		break;
+	case US:
+		/* ignore as used for buffer flush */
 		break;
 	default:
 		/* Print character at current cursor position */
