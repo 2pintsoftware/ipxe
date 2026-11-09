@@ -26,5 +26,7 @@
   #define VRAM_SETTINGS		/* Add support for VRAM Data */
 #endif
 
+// Disable eapol by default - enable by build param
+#undef NET_PROTO_EAPOL		/* EAP over LAN protocol */
 #undef EAP_METHOD_MD5		/* MD5-Challenge port authentication */
 #define EAP_METHOD_MSCHAPV2	/* MS-CHAPv2 port authentication */
